@@ -1,0 +1,117 @@
+body {
+    background-color: lightgray;
+    font-family: monospace;
+}
+
+#app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#header {
+    border-bottom: 1px solid black;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#app-title {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+#nav a:hover {
+    color: grey;
+}
+
+#footer {
+    text-align: center;
+    border-top: 1px solid black;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    font-size: 0.8rem;
+}
+
+#login {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+#form-title {
+    color: grey;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid grey;
+}
+
+.field {
+    margin: 1rem 0;
+}
+
+.field-label {
+    margin: 0.375rem 0;
+    font-weight: bold;
+    display: block;
+}
+
+.field-input {
+    border: 1px solid black;
+    padding: 0.375rem 0.625rem;
+    width: 100%;
+}
+
+.field-info {
+    margin: 0.375rem 0 0.8rem 0;
+    border-radius: 10px;
+    color: grey;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+#errors {
+    display: none;
+    background-color: grey;
+    border-radius: 6px;
+    padding: 0.375rem 0.75rem;
+    margin: 1rem 0;
+}
+
+#errors.visible {
+    display: block;
+}
+
+#login-submit {
+    background: black;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    padding: 0.375rem 0.75rem;
+    font-weight: bold;
+    float: right;
+}
+
+#login-submit:hover {
+    background: grey;
+}
+
+.valid {
+    border: 1px solid green;
+}
+
+.invalid {
+    border: 1px solid red;
+}
