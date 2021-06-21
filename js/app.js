@@ -9,24 +9,12 @@ let app = {
 
         // on récupère un array contenant tous les champs qui ont la classe 'field'
         console.log(app.fields);
+
         // on peut récupérer le nombre d'item dans cet array
         console.log(app.fields.length);
 
         // on écoute l'event pour CHAQUE field
-
-        // On peut utiliser une boucle for
-        //for (let fieldIndex = 0; fieldIndex > app.fields.length; fieldIndex++) {
-        //    let field = app.fields[fieldIndex];
-        //    console.log(field);
-
-        // ATTENTION : ne pas utiliser for...in ici => pas adapté, produit une erreur
-        //for (fieldIndex in app.fields) {
-        //    console.log(app.fields[fieldIndex]);
-        //}
-
-        // La méthode la plus moderne et adaptée est la méthode forEach
         app.fields.forEach(function(field){
-        //    console.log(field);
             field.addEventListener('blur', app.isInputValid);
         });
 
@@ -105,7 +93,14 @@ let app = {
     showErrors: function() {
         // on ajoute les erreurs dans le bloc
         app.errors.forEach(function(error){
-            app.errorsArea.innerHTML += '<p class="error">' + error + '</p>';
+        // on crée un nouvel élément
+        let errorElement = document.createElement('p');
+        // on lui ajoute une class
+        errorElement.classList.add('error');
+        // on modifie son contenu
+        errorElement.textContent = error;
+        // on lui ajoute à la zone d'erreurs le nouvel élément crée
+        app.errorsArea.appendChild(errorElement);
         });
         // on affiche le bloc d'erreurs
         app.errorsArea.classList.add('visible');
